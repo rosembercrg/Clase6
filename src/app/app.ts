@@ -7,37 +7,39 @@ declare const DD_RUM: any;
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: ['./app.css']
+  styleUrls: ['./app.css']
 })
 
 export class App {
   protected readonly title = signal('ProyectoClase6R');
 
-  constructor() {
-  
-  // log informativo
+  constructor() { }
+  // log de informacion
   logInfo(message: string) {
-  DD_RUM.addAction(MessageChannel, { level: 'info', module: 'AppComponent' });
+    if (typeof DD_RUM !== 'undefined') {
+      DD_RUM.addAction(MessageChannel, { level: 'info', module: 'AppComponent' });
+    } else {
+      console.warn('DD_RUM no está definido', message);
+    }
   }
 
   // log de error
-  logError(message: string, error?: any) {
-    DD_RUM.addError(message, { error, module: 'AppComponent' });
-  } else {
-    console.warn('DD_RUM no está definido', message, error);
+  logError(message: string, error: any) {
+    if (typeof DD_RUM !== 'undefined') {
+      DD_RUM.addError(message, { error, module: 'AppComponent' });
+    } else {
+      console.warn('DD_RUM no está definido', message, error);
+    }
   }
-}
 
 
 
-
-
-nfAfterViewInit() {
-setTimeout(() => {
-  if (typeof DD_RUM !== 'undefined') {
-    DD_RUM.addAction('App Anugalar iniciada correctamente');
-  }
-}, 1000); // Espera 1 segundo
+  nfAfterViewInit() {
+    setTimeout(() => {
+      if (typeof DD_RUM !== 'undefined') {
+        DD_RUM.addAction('App Anugalar iniciada correctamente');
+      }
+    }, 1000); // Espera 1 segundo
   }
 
 
@@ -50,3 +52,4 @@ setTimeout(() => {
       this.logError('Se ha producido un error simulado', e);
     }
   }
+}
