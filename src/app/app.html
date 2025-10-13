@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,15 +12,30 @@
       color: #333;
       line-height: 1.6;
     }
+/* Aquí empieza el CSS */ 
+    /* TÍTULO PRINCIPAL - Aquí tengo lo de Sunny Home del inicio es más claro */
+    header {
+      background-color: #d6aa1a;
+      color: white;
+      text-align: center;
+      padding: 30px 0 15px 0;
+    }
 
-    /* NAVBAR */
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    /* NAVBAR - Esto es lo de la barra donde dice inicio, test y contacto */
     nav {
-      background-color: #2a6592;
+      background-color: #e99211;
       color: white;
       display: flex;
       justify-content: center;
       gap: 20px;
       padding: 15px 0;
+      border-top: 1px solid #fff;
     }
 
     nav a {
@@ -31,23 +45,23 @@
       font-size: 16px;
       transition: color 0.3s;
     }
-
+/* El hover es cuando paso el cursor encima del botón */
     nav a:hover {
       color: #d8e9f0;
     }
 
-    /* SECCIONES */
+    /* Cada Botón me desliza a la sección con el href, pero esto es lo de CSS que es el color y estilo, esto es el estilo de cada cuadrito */
     section {
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
       background-color: white;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: #2a6592;
+      color: #ce4608;
       text-align: center;
     }
 
@@ -56,8 +70,14 @@
       margin-bottom: 20px;
     }
 
+    h3 {
+      color: #812b04;
+      text-align: center;
+    }
+
+    /* PIE DE PÁGINA - El final, lo de contacto */
     footer {
-      background-color: #2a6592;
+      background-color: #d6aa1a;
       color: white;
       text-align: center;
       padding: 15px 0;
@@ -67,6 +87,7 @@
     footer a {
       color: #d8e9f0;
       text-decoration: none;
+      text-align: center;
       font-weight: bold;
     }
 
@@ -75,47 +96,59 @@
     }
   </style>
 </head>
-
 <body>
+  <!--Acá empieza el body, todo lo que va a salir en la página */ --> 
+  <!-- Los mismo El header es lo de Sunny Home, pero acá ya es el código qué saldrá -->
+  <header>
+    <h1>Sunny Home</h1>
+  </header>
 
-  <!-- MENÚ SUPERIOR -->
+  <!-- Esto es lo del Navbar que me dice inicio, contacto y test, si doy click desliza, no olvidar, se llama por href -->
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#test">Test</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- SECCIÓN INICIO -->
+  <!-- Esto tiene el id para que el href lo deslice al llamarlo, empiezo en inicio-->
   <section id="inicio">
     <h2>Testea tu nivel de inglés y mejora con nosotros</h2>
     <p>
-      En <strong>Sunny Home</strong> puedes evaluar tu nivel de inglés de manera gratuita y conocer en qué áreas
-      necesitas fortalecer tus habilidades.
-      Ofrecemos recursos y guías para que practiques las cuatro habilidades fundamentales del idioma: Speaking,
-      Listening, Reading y Writing.
+      En <strong>Sunny Home</strong> puedes evaluar tu nivel de inglés de manera gratuita y conocer en qué áreas necesitas fortalecer tus habilidades.
+      Ofrecemos recursos y guías para que practiques las cuatro habilidades fundamentales del idioma: Speaking, Listening, Reading y Writing.
     </p>
     <p>
-      Si deseas avanzar de forma efectiva, te invitamos a inscribirte en nuestro curso completo, donde recibirás una
-      formación personalizada diseñada
+      Si deseas avanzar de forma efectiva, te invitamos a inscribirte en nuestro curso completo, donde recibirás una formación personalizada diseñada
       según tus necesidades, metas y ritmo de aprendizaje.
     </p>
   </section>
 
-  <!-- SECCIÓN TEST O LECTURA -->
+  <!-- Lo mismo de arriba sigo por test, id llama al click, lo puse con p para organizar varios y section me ayuda a separar en cuadros, el css lo pone bien-->
   <section id="test">
     <h2>Lectura y comprensión</h2>
-    <p>
-      Aquí podrás agregar una lectura o un ejercicio de comprensión lectora para evaluar tu nivel de inglés.
-      Puedes incluir un texto en inglés, preguntas de opción múltiple o un pequeño formulario.
-    </p>
+    <section id="test">
+  <h3>Reading and Grammar Test</h3>
+  <p>
+    Every morning, Laura _______ (wake up) at 7:00 a.m. She _______ (have) a quick breakfast and _______ (go) to her English class at Sunny Home.  
+    Her teacher always _______ (start) the lesson with a short conversation practice.  
+  </p>
+  <p>
+    After class, Laura and her friends _______ (study) together at the park. They _______ (talk) about their goals and _______ (practice) speaking English for one hour.  
+    Laura _______ (feel) happy because she _______ (improve) every week.  
+  </p>
+  <p>
+    At the end of the day, she _______ (write) a short diary in English to review what she _______ (learn) during the day.
+  </p>
+</section>
   </section>
 
-  <!-- SECCIÓN CONTACTO -->
+  <!-- Sección de contacto, acá no pude centrarlo con el código sigue saliendo a la izquierda, el footer hover lo subraya con el cursor encima-->
   <footer id="contacto">
-    <p>Contáctanos: <a href="mailto:info@sunnyhome.com">info@sunnyhome.com</a></p>
+    <p>Contáctanos: <a href="rosembercrg@sunnyhome.com">rosembercrg@sunnyhome.com</a></p>
     <p>© 2025 Sunny Home. Todos los derechos reservados.</p>
   </footer>
 
 </body>
-
 </html>
+
+<!--preguntar por qué no me centra el contacto, y como haría botones que me manden a otras secciones sin que deslicen que cambien como una normal-->   
