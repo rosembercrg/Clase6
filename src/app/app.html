@@ -1,57 +1,121 @@
-<main>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Teaching</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Test</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cursos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Contacto</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Home - Inglés</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: #2a6592;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d8e9f0;
+    }
+
+    /* SECCIONES */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2a6592;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #2a6592;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #d8e9f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENÚ SUPERIOR -->
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#test">Test</a>
+    <a href="#contacto">Contacto</a>
   </nav>
-  <router-outlet></router-outlet>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1>Welcome to Sunny Home!</h1>
-        <p>Testea tu nivel de inglés y mejora con nosotros
 
-          En Sunny Home puedes evaluar tu nivel de inglés de manera gratuita y conocer en qué áreas necesitas fortalecer
-          tus habilidades.
+  <!-- SECCIÓN INICIO -->
+  <section id="inicio">
+    <h2>Testea tu nivel de inglés y mejora con nosotros</h2>
+    <p>
+      En <strong>Sunny Home</strong> puedes evaluar tu nivel de inglés de manera gratuita y conocer en qué áreas
+      necesitas fortalecer tus habilidades.
+      Ofrecemos recursos y guías para que practiques las cuatro habilidades fundamentales del idioma: Speaking,
+      Listening, Reading y Writing.
+    </p>
+    <p>
+      Si deseas avanzar de forma efectiva, te invitamos a inscribirte en nuestro curso completo, donde recibirás una
+      formación personalizada diseñada
+      según tus necesidades, metas y ritmo de aprendizaje.
+    </p>
+  </section>
 
-          Ofrecemos recursos y guías para que practiques las cuatro habilidades fundamentales del idioma:
+  <!-- SECCIÓN TEST O LECTURA -->
+  <section id="test">
+    <h2>Lectura y comprensión</h2>
+    <p>
+      Aquí podrás agregar una lectura o un ejercicio de comprensión lectora para evaluar tu nivel de inglés.
+      Puedes incluir un texto en inglés, preguntas de opción múltiple o un pequeño formulario.
+    </p>
+  </section>
 
-          Speaking
+  <!-- SECCIÓN CONTACTO -->
+  <footer id="contacto">
+    <p>Contáctanos: <a href="mailto:info@sunnyhome.com">info@sunnyhome.com</a></p>
+    <p>© 2025 Sunny Home. Todos los derechos reservados.</p>
+  </footer>
 
-          Listening
+</body>
 
-          Reading
-
-          Writing
-
-
-          Sin embargo, si deseas avanzar de forma efectiva, te invitamos a inscribirte en nuestro curso completo, donde
-          recibirás una formación personalizada diseñada según tus necesidades, metas y ritmo de aprendizaje.
-
-          En Sunny Home, te ayudamos a mejorar tu inglés paso a paso, con enfoque, claridad y acompañamiento
-          profesional.</p>
-      </div>
-    </div>
-  </div>
-</main>
+</html>
