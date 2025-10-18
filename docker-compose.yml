@@ -1,0 +1,22 @@
+version: '3.8'  # Usamos una versión moderna de Docker Compose
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"  # Exponemos el puerto 80 del contenedor a la máquina local
+    environment:
+      - NODE_ENV=production  # Puedes agregar variables de entorno si lo necesitas
+    depends_on:
+      - db  # Si tu aplicación depende de algún servicio, como una base de datos, lo agregamos aquí
+
+  # Si necesitas un servicio de base de datos (por ejemplo, MySQL), lo agregas aquí
+  db:
+    image: mysql:5.7  # Usamos la imagen oficial de MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: example  # Contraseña para el root de MySQL
+    volumes:
+      - db_data:/var/lib/mysql  # Volumen persistente para la base de datos
+
+volumes:
+  db_data:  # Define un volumen persistente para los datos de la base de datos
