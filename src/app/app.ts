@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Navbar } from './shared/navbar/navbar';
 
 declare const DD_RUM: any;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Navbar],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -14,7 +15,7 @@ export class App {
   protected readonly title = signal('ProyectoClase6R');
 
   constructor() { }
-  // log de informacion
+
   logInfo(message: string) {
     if (typeof DD_RUM !== 'undefined') {
       DD_RUM.addAction(MessageChannel, { level: 'info', module: 'AppComponent' });
@@ -23,7 +24,6 @@ export class App {
     }
   }
 
-  // log de error
   logError(message: string, error: any) {
     if (typeof DD_RUM !== 'undefined') {
       DD_RUM.addError(message, { error, module: 'AppComponent' });
@@ -32,19 +32,14 @@ export class App {
     }
   }
 
-
-
   nfAfterViewInit() {
     setTimeout(() => {
       if (typeof DD_RUM !== 'undefined') {
         DD_RUM.addAction('App Anugalar iniciada correctamente');
       }
-    }, 1000); // Espera 1 segundo
+    }, 1000);
   }
 
-
-
-  //Simulacion de un error
   simulateError() {
     try {
       throw new Error('Error simulado en el componente App');

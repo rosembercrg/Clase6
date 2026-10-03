@@ -1,0 +1,32 @@
+<section class="levels-page">
+  <div class="page-header">
+    <span class="eyebrow">Niveles</span>
+    <h1 class="section-title">Elige tu nivel de inglés</h1>
+    <p>Cada nivel se trabaja de forma independiente para que puedas enfocarte en tus necesidades reales y avanzar sin presión.</p>
+  </div>
+
+  <div class="level-stack">
+    <section *ngFor="let level of levels" class="level-card">
+      <div class="level-top">
+        <span class="level-badge">{{ level.code | uppercase }}</span>
+        <h2>{{ level.title }}</h2>
+      </div>
+
+      <p class="level-description">{{ level.description }}</p>
+
+      <div class="level-readings">
+        <article class="reading-mini">
+          <h3>{{ level.readingOne }}</h3>
+          <p>Comprensión de lectura con 5 preguntas.</p>
+          <a class="link-btn" [routerLink]="['/test', level.code]">Abrir lectura</a>
+        </article>
+
+        <article class="reading-mini">
+          <h3>{{ level.readingTwo }}</h3>
+          <p>Comprensión de lectura con 5 preguntas.</p>
+          <a class="link-btn" [routerLink]="['/test', level.code]">Abrir lectura</a>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>

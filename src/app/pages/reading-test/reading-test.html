@@ -1,0 +1,32 @@
+<section class="reading-page">
+  <div class="reading-header">
+    <span class="eyebrow">Evaluación de lectura</span>
+    <h1 class="section-title">{{ level.title }}</h1>
+  </div>
+
+  <div class="reading-list">
+    <article *ngFor="let reading of level.readings; let i = index" class="reading-card">
+      <h2>{{ reading.title }}</h2>
+      <p class="reading-text">{{ reading.text }}</p>
+
+      <div class="questions-block">
+        <h3>Preguntas</h3>
+        <ol>
+          <li *ngFor="let question of reading.questions; let qIndex = index" class="question-item">
+            <p>{{ question.question }}</p>
+            <div class="options" role="radiogroup" [attr.aria-label]="'Pregunta ' + (qIndex + 1)">
+              <label *ngFor="let option of question.options">
+                <input type="radio" [name]="'reading-' + i + '-' + qIndex" />
+                <span>{{ option }}</span>
+              </label>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </article>
+  </div>
+
+  <div class="actions-row">
+    <a class="secondary-btn" routerLink="/niveles">Volver a niveles</a>
+  </div>
+</section>
